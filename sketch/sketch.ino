@@ -5,7 +5,7 @@ unsigned long previousMillisButton = 0;
 const long interval = 500; //Intervall bitte hier einstellen in Millisekunden
 const long duration = 180000; //Dauer bitte hier einstellen in Millisekunden
 volatile int stateLED = 0;
-volatile int stateButton=1;
+volatile int stateButton=0;
 unsigned long currentMillis=0;
 
 void setup() { 
@@ -18,8 +18,8 @@ void setup() {
 
 void loop() {    
   currentMillis = millis();
-  if (digitalRead(pushbutton) == HIGH){stateButton=0};
-  if (digitalRead(pushbutton) == LOW && stateButton==0){pushTimeReset(); Serial.println("pressed") stateButton=1;}
+  if (digitalRead(pushbutton) == HIGH){stateButton = 0;}
+  if (digitalRead(pushbutton) == LOW && stateButton == 0){pushTimeReset(); Serial.println("pressed") stateButton = 1;}
   if (previousMillisButton >= currentMillis)
   {
   
