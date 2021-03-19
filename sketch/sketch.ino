@@ -19,7 +19,7 @@ void setup() {
 void loop() {    
   currentMillis = millis();
   if (digitalRead(pushbutton) == HIGH){stateButton = 0;}
-  if (digitalRead(pushbutton) == LOW && stateButton == 0){pushTimeReset(); Serial.println("pressed") stateButton = 1;}
+  if (digitalRead(pushbutton) == LOW && stateButton == 0){pushTimeReset(); Serial.println("pressed"); stateButton = 1;}
   if (previousMillisButton >= currentMillis)
   {
   
