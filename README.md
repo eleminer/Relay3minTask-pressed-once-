@@ -8,5 +8,5 @@ Als Hardware wird ein Arduino Nano verwendet.
 Pinbelegung:
 <ul>
 <li>Relay: D3</li>
-<li>Taster: D2 und GND</li>
+<li>Taster: A2 und GND</li>
 </ul>
