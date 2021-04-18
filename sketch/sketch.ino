@@ -18,7 +18,7 @@ void setup() {
 void loop() {    
   currentMillis = millis();
   if (analogRead(pushbutton) >= 1000){stateButton = 0;}
-  if ((analogRead(pushbutton) <= 100) && stateButton == 0){pushTimeReset(); Serial.println("pressed"); stateButton = 1;}
+  if ((analogRead(pushbutton) <= 10) && stateButton == 0){pushTimeReset(); Serial.println("pressed"); stateButton = 1;}
   if (previousMillisButton >= currentMillis)
   {
   
