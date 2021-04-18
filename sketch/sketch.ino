@@ -7,6 +7,7 @@ const long duration = 180000; //Dauer bitte hier einstellen in Millisekunden
 volatile int stateLED = 0;
 volatile int stateButton=0;
 unsigned long currentMillis=0;
+unsigned long debounce=0;
 
 void setup() { 
   digitalWrite(12, HIGH); pinMode(12, OUTPUT);
@@ -17,8 +18,8 @@ void setup() {
 
 void loop() {    
   currentMillis = millis();
-  if (analogRead(pushbutton) >= 1000){stateButton = 0;}
-  if ((analogRead(pushbutton) <= 10) && stateButton == 0){pushTimeReset(); Serial.println("pressed"); stateButton = 1;}
+  if (analogRead(pushbutton) >= 1000){stateButton = 0; debounce=currentMillis;}
+  if ((analogRead(pushbutton) <= 10) && stateButton == 0 && currentMillis-debounce>100){pushTimeReset(); Serial.println("pressed"); stateButton = 1;}
   if (previousMillisButton >= currentMillis)
   {
   
